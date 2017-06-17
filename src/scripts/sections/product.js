@@ -19,7 +19,8 @@ theme.Product = (function() {
     productJson: '[data-product-json]',
     productPrice: '[data-product-price]',
     productThumbs: '[data-product-single-thumbnail]',
-    singleOptionSelector: '[data-single-option-selector]'
+    singleOptionSelector: '[data-single-option-selector]',
+    sku: '[data-sku]'
   };
 
   /**
@@ -80,6 +81,7 @@ theme.Product = (function() {
 
       if (variant) {
         $(selectors.priceWrapper, this.$container).removeClass('hide');
+        $(selectors.sku).text(variant.sku);
       } else {
         $(selectors.addToCart, this.$container).prop('disabled', true);
         $(selectors.addToCartText, this.$container).html(theme.strings.unavailable);

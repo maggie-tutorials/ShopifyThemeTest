@@ -11,9 +11,9 @@
 
   <img src="{{ featured_image | img_url: '480x480' }}" alt="{{ featured_image.alt | escape }}" data-product-featured-image>
   {% if product.images.size > 1 %}
-    <ul>
+    <ul class="grid">
       {% for image in product.images %}
-        <li>
+        <li class="grid__item one-quarter">
           <a href="{{ image.src | img_url: '480x480' }}" data-product-single-thumbnail>
             <img src="{{ image.src | img_url: '160x160' }}" alt="{{ image.alt | escape }}">
           </a>
@@ -25,6 +25,7 @@
 
   <h1>{{ product.title }}</h1>
   <p>{{ product.vendor }}</p>
+  <p data-sku>{{ current_variant.sku }}</p>
 
   <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
     <meta itemprop="priceCurrency" content="{{ shop.currency }}">
