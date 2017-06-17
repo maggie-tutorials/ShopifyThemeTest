@@ -28,7 +28,7 @@
     {% for product in collection.products %}
       <div class="grid__item medium-up--one-quarter small--one-half">
         <a href="{{ product.url | within: collection }}">
-          <img src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
+          <img class="card__image" src="{{ product.featured_image.src | img_url: '480x480' }}" alt="{{ product.featured_image.alt | escape }}">
         </a>
 
         <p>

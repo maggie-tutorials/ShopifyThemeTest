@@ -1,3 +1,11 @@
 .card__price--sale {
   color: red;
 }
+
+.card__image {
+  @include prefix(transition, all 0.5s, webkit spec);
+
+  &:hover {
+    @include prefix(transform, scale(0.8), webkit spec);
+  }
+}
